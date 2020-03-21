@@ -1,8 +1,0 @@
-I"B<h3 id="checksec">Checksec</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Canary                        : No
-NX                            : Yes
-PIE                           : No
-Fortify                       : No
-RelRO                         : Partial
-</code></pre></div></div>
-:ET

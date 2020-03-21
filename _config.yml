@@ -6,12 +6,12 @@ footer-links:
   email: null
   facebook: null
   flickr: null
-  github: barryclark/jekyll-now
+  github: bhrdn
   instagram: null
   linkedin: null
   pinterest: null
   rss: null
-  twitter: jekyllrb
+  twitter: null
   stackoverflow: null
   youtube: null
   googleplus: null
@@ -31,7 +31,6 @@ sass:
 gems:
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-admin
 exclude:
   - Gemfile
   - Gemfile.lock
