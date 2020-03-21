@@ -1,0 +1,40 @@
+name: '??????'
+description: null
+avatar: 'https://www.hackthebox.eu/storage/avatars/3f8c0cb884152775abf26cc8f47c2531.png'
+footer-links:
+  dribbble: null
+  email: null
+  facebook: null
+  flickr: null
+  github: barryclark/jekyll-now
+  instagram: null
+  linkedin: null
+  pinterest: null
+  rss: null
+  twitter: jekyllrb
+  stackoverflow: null
+  youtube: null
+  googleplus: null
+disqus: null
+google_analytics: null
+url: null
+baseurl: ''
+permalink: '/:title/'
+version: v1.2.0
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+sass:
+  style: ':expanded'
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-admin
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
