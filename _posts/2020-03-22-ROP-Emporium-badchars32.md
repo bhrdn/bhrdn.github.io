@@ -9,7 +9,7 @@ An arbitrary write challenge with a twist; certain input characters get mangled 
 ### Prev step to overflow stack
 <https://bhrdn.github.io/ROP-Emporium-ret2win32/>
 
-### Prev step to get addr data section
+### Prev step to find data-section addr and gadgets
 <https://bhrdn.github.io/ROP-Emporium-write432/>
 
 ### Check vuln function
@@ -18,22 +18,22 @@ void pwnme(void)
 {
   char *__s;
   size_t __n;
-  undefined auStack44 [40];
+  undefined auStack44[40];
   
   __s = (char *)malloc(0x200);
   if (__s != (char *)0x0) {
-    memset(__s,0,0x200);
-    memset(auStack44,0,0x20);
+    memset(__s, 0, 0x200);
+    memset(auStack44, 0, 0x20);
     puts("badchars are: b i c / <space> f n s");
     printf("> ");
-    __s = fgets(__s,0x200,stdin);
-    __n = nstrlen(__s,0x200);
-    checkBadchars(__s,__n);
-    memcpy(auStack44,__s,__n);
+    __s = fgets(__s, 0x200, stdin);
+    __n = nstrlen(__s, 0x200);
+    checkBadchars(__s, __n);
+    memcpy(auStack44, __s, __n);
     free(__s);
     return;
   }
-                    /* WARNING: Subroutine does not return */
+
   exit(1);
 }
 ```
