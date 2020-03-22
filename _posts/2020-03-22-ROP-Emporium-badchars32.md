@@ -50,7 +50,7 @@ void usefulGadgets(void)
 }
 ```
 
-### Why not bypass badchars with bash special params :trollface:
+### Why not bypass badchars with bash special params 💃💃
 - Badchars: [ 'b', 'i', 'c', '/', ' ', 'f', 'n', 's' ]
 
 ```c
