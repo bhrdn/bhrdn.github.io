@@ -13,7 +13,7 @@ Once you've figured out how to write your string into memory and where to write 
 ```bash
 objdump -D write432 | grep data_start | awk '{print $1}'
 ```
-- sh addr: 0x804a028
+- __data_start : 0x804a028
 
 ### Check function usefulGadgets
 ```
