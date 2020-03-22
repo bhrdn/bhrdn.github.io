@@ -6,7 +6,7 @@ title: ROP Emporium - split32
 ### Prev step to overflow stack
 <https://bhrdn.github.io/ROP-Emporium-ret2win32/>
 
-### Find usefull string
+### Find useful string
 ```bash
 rabin2 -z split32
 ```

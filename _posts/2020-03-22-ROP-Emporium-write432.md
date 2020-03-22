@@ -15,7 +15,7 @@ objdump -D write432 | grep data_start | awk '{print $1}'
 ```
 - __data_start : 0x804a028
 
-### Check function usefulGadgets
+### Check useful function
 ```
 gef➤  disassemble usefulGadgets
 Dump of assembler code for function usefulGadgets:
