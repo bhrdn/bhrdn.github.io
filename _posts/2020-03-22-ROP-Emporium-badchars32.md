@@ -50,7 +50,7 @@ void usefulGadgets(void)
 }
 ```
 
-### Why not bypass badchars with bash special params 💃💃
+### Why not bypass badchars with bash special params to spawn shell 🔥
 - Badchars: [ 'b', 'i', 'c', '/', ' ', 'f', 'n', 's' ]
 
 ```c
