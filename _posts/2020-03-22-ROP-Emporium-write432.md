@@ -9,7 +9,7 @@ Once you've figured out how to write your string into memory and where to write 
 ### Prev step to overflow stack
 <https://bhrdn.github.io/ROP-Emporium-ret2win32/>
 
-### Find sh addr in data section
+### Find addr data section
 ```bash
 objdump -D write432 | grep data_start | awk '{print $1}'
 ```
