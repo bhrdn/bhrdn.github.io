@@ -15,6 +15,7 @@ Didapati pemanggilan fungsi system pada line 43, yang bertujuan untuk menyimpan 
 Sekarang lakukan pengecekan pada variable getname, tablename, price, receiptcode yang nantinya akan di masukkan kedalam variable content.
 
 - variable getname
+
 ![image](https://user-images.githubusercontent.com/13828056/82135108-07ca4900-9829-11ea-8460-98e2b442455e.png)
 
 Dari sini sebenarnya sudah terlihat celah code injection, jika kita tidak menggunakan cookie name dan langsung melakukan request POST dengan query name, dikarenakan pada saat set cookie name terdapat fungsi clear yang akan menghapus beberapa karakter penting untuk melakukan code injection.
@@ -22,6 +23,7 @@ Dari sini sebenarnya sudah terlihat celah code injection, jika kita tidak menggu
 ![image](https://user-images.githubusercontent.com/13828056/82135179-cf773a80-9829-11ea-80f4-44db1099b6af.png)
 
 - variable tablename
+
 ![image](https://user-images.githubusercontent.com/13828056/82135327-b40d2f00-982b-11ea-80f4-565d108f5db3.png)
 
 Sama seperti variable getname sebelumnya, pada variable tablename kita bisa langsung melakukan request GET dengan query table, untuk melakukan code injection karna tidak ada filter apapun.
@@ -33,9 +35,14 @@ Sama seperti variable getname sebelumnya, pada variable tablename kita bisa lang
 Hanya constant value antara "80$" dan "350$" dan tidak ada celah untuk di eksploitasi
 
 - variable receiptcode
+
 ![image](https://user-images.githubusercontent.com/13828056/82135375-3c8bcf80-982c-11ea-8493-77e9fb9d23d4.png)
 
-Hanya dimanfaatkan untuk random number filename dan tidak ada celah untuk di eksploitasi
+Hanya dimanfaatkan untuk random number filename
+
+![image](https://user-images.githubusercontent.com/13828056/82135961-c8a0f580-9832-11ea-90a4-5995412eef27.png)
+
+Dan sebenarnya bisa dilakukan eksploitasi jika pada line 40 tidak ada pengecekan cookie reserved
 
 ## Conclusion
 Dari analisa diatas didapati jika terdapat 2 vuln variable name dan tablename, untuk skema exploitnya antara lain sebagai berikut ini.
